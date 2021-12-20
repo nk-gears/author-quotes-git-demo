@@ -1,0 +1,23 @@
+
+
+1.paconn login
+
+=> You can login to your MS Account and get a token
+=> /Users/Nirmal/.paconn/accessToken
+
+2. paconn download
+=> Download a Connector
+
+3. paconn validate -s settings.json
+=> Validate the Connector with STrict Rules Enforced by Connector Team
+
+4. paconn update -s settings.json
+=> Upload the Connector to our Remote Account.
+
+5. paconn create : To create a new one
+paconn create -e [Power Platform Environment GUID] --api-prop [Path to apiProperties.json] --api-def [Path to apiDefinition.swagger.json] --icon [Path to icon.png] --secret [The OAuth2 client secret for the connector]
+
+Note : Uploading is NOT same as Publishing the Connector to Premium
+
+Publishing has to happen separately with Microsoft Team Memebers
+

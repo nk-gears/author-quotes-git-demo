@@ -1,0 +1,368 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Clockify",
+    "description": "Clockify"
+  },
+  "host": "api.clockify.me",
+  "basePath": "/api",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/workspaces": {
+      "get": {
+        "summary": "Get Workspaces",
+        "description": "Get Workspaces",
+        "operationId": "GetWorkspaces",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/workspaces/{workspace_id}/clients": {
+      "get": {
+        "summary": "Get Clients",
+        "description": "Get Clients",
+        "operationId": "GetClients",
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "archived",
+            "default": "false",
+            "in": "query",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/workspaces/{workspace_id}/clients/projects-filter": {
+      "get": {
+        "summary": "Get Projects",
+        "description": "Get Projects",
+        "operationId": "GetProjects",
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+            
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "hourlyRate": {
+                            "type": "object",
+                            "properties": {
+                                "amount": {
+                                    "type": "integer"
+                                },
+                                "currency": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "costRate": {
+                            "type": "object",
+                            "properties": {
+                                "amount": {
+                                    "type": "integer"
+                                },
+                                "currency": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "memberships": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "userId": {
+                                        "type": "string"
+                                    },
+                                    "hourlyRate": {},
+                                    "costRate": {},
+                                    "targetId": {
+                                        "type": "string"
+                                    },
+                                    "membershipType": {
+                                        "type": "string"
+                                    },
+                                    "membershipStatus": {
+                                        "type": "string"
+                                    }
+                                }
+                              
+                            }
+                        },
+                        "workspaceSettings": {
+                            "type": "object",
+                            "properties": {
+                                "timeRoundingInReports": {
+                                    "type": "boolean"
+                                },
+                                "onlyAdminsSeeBillableRates": {
+                                    "type": "boolean"
+                                },
+                                "activeBillableHours": {
+                                    "type": "boolean"
+                                },
+                                "onlyAdminsCanChangeBillableStatus": {
+                                    "type": "boolean"
+                                },
+                                "onlyAdminsCreateProject": {
+                                    "type": "boolean"
+                                },
+                                "onlyAdminsSeeDashboard": {
+                                    "type": "boolean"
+                                },
+                                "defaultBillableProjects": {
+                                    "type": "boolean"
+                                },
+                                "isProjectPublicByDefault": {
+                                    "type": "boolean"
+                                },
+                                "lockTimeEntries": {},
+                                "round": {
+                                    "type": "object",
+                                    "properties": {
+                                        "round": {
+                                            "type": "string"
+                                        },
+                                        "minutes": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "projectFavorites": {
+                                    "type": "boolean"
+                                },
+                                "canSeeTimeSheet": {
+                                    "type": "boolean"
+                                },
+                                "canSeeTracker": {
+                                    "type": "boolean"
+                                },
+                                "projectPickerSpecialFilter": {
+                                    "type": "boolean"
+                                },
+                                "forceProjects": {
+                                    "type": "boolean"
+                                },
+                                "forceTasks": {
+                                    "type": "boolean"
+                                },
+                                "forceTags": {
+                                    "type": "boolean"
+                                },
+                                "forceDescription": {
+                                    "type": "boolean"
+                                },
+                                "onlyAdminsSeeAllTimeEntries": {
+                                    "type": "boolean"
+                                },
+                                "onlyAdminsSeePublicProjectsEntries": {
+                                    "type": "boolean"
+                                },
+                                "onlyAdminsSeeProjectStatus": {
+                                    "type": "boolean"
+                                },
+                                "trackTimeDownToSecond": {
+                                    "type": "boolean"
+                                },
+                                "projectGroupingLabel": {
+                                    "type": "string"
+                                },
+                                "adminOnlyPages": {
+                                    "type": "array"
+                                },
+                                "automaticLock": {},
+                                "onlyAdminsCreateTag": {
+                                    "type": "boolean"
+                                },
+                                "isCostRateActive": {
+                                    "type": "boolean"
+                                },
+                                "timeApprovalEnabled": {
+                                    "type": "boolean"
+                                },
+                                "screenshotsEnabled": {
+                                    "type": "boolean"
+                                },
+                                "locationsEnabled": {
+                                    "type": "boolean"
+                                },
+                                "onlyAdminsCreateTask": {
+                                    "type": "boolean"
+                                },
+                                "timeTrackingMode": {
+                                    "type": "string"
+                                },
+                                "taskBillableEnabled": {
+                                    "type": "boolean"
+                                },
+                                "taskRateEnabled": {
+                                    "type": "boolean"
+                                },
+                                "invoicingEnabled": {
+                                    "type": "boolean"
+                                },
+                                "expensesEnabled": {
+                                    "type": "boolean"
+                                },
+                                "companyAddress": {
+                                    "type": "string"
+                                },
+                                "decimalFormat": {
+                                    "type": "boolean"
+                                },
+                                "canManagerEditUsersTime": {
+                                    "type": "boolean"
+                                },
+                                "workingDays": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "timeOff": {
+                                    "type": "object",
+                                    "properties": {
+                                        "regularUserCanSeeOtherUsersTimeOff": {
+                                            "type": "boolean"
+                                        },
+                                        "active": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                },
+                                "auditLogSettings": {},
+                                "pumbleIntegrationSettings": {
+                                    "type": "object",
+                                    "properties": {
+                                        "showChatWidget": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "imageUrl": {
+                            "type": "string"
+                        },
+                        "featureSubscriptionType": {},
+                        "features": {
+                            "type": "array"
+                        },
+                        "onSubdomain": {
+                            "type": "boolean"
+                        }
+                    }
+                    
+                }
+            
+
+            }
+          }
+        }
+      }
+    },
+    "/workspaces/{workspace_id}/users": {
+      "get": {
+        "summary": "Get All Users",
+        "description": "Get All Users",
+        "operationId": "GetAllUsers",
+        "parameters": [ {
+          "name": "workspace_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/workspaces/{workspace_id}/user/{user_id}/time-entries": {
+      "get": {
+        "summary": "Get Time Entries For User",
+        "description": "Get Time Entries For User",
+        "operationId": "GetTimeEntriesForUser",
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "API Key": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "X-API-KEY"
+    }
+  },
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
+  "tags": []
+}
